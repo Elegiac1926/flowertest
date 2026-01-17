@@ -1,126 +1,212 @@
-// 结果原型定义 - 基于拉康/弗洛伊德主体结构
-const resultArchetypes = {
-  "癔症主体：永恒的提问者": {
-    keywords: ['hysteric', 'desire_of_lack', 'unsatisfied_structure', 'enigmatic_object', 'testing_love', 'passive_position'],
-    minScore: 20,
+// 花的原型定义
+const flowerArchetypes = {
+  "玫瑰 Rosa": {
+    keywords: ['rose', 'passionate', 'dramatic', 'intense', 'romantic', 'aesthetic'],
+    minScore: 25,
     description: {
-      core: "你的欲望是一个问题，而非答案。",
-      identity: "你活在'我是谁？''我想要什么？'的永恒追问中。你的欲望不指向对象本身，而是指向对象背后的'缺失'——你爱的不是那个人，而是ta身上你无法企及的部分。你像一个侦探，永远在破译他者的欲望，试图从中找到自己的位置。",
-      structure: "这是癔症主体的根本结构：不满足的欲望（le désir insatisfait）。你害怕被完全满足，因为那意味着欲望的死亡。你会无意识地选择那些'不可能'的对象——已婚的人、冷漠的人、或者根本不存在的理想。一旦对方真的靠近，你就会后退。",
-      root: "这种结构可能源于早期与母亲的关系——你曾经是母亲欲望的对象，但你发现她的欲望指向别处（父亲、工作、或其他）。于是你学会了：**成为被欲望者，而非欲望的主体**。你的身份建立在'我能否引起ta的欲望'之上。",
-      gift: "但这也赋予了你独特的敏感：你能读懂房间里最微妙的情绪流动，你的共情近乎通灵。你是天生的艺术家、演员、治疗师——因为你太懂得'表演'以及'表演背后的空洞'。",
-      invitation: "也许可以尝试：停止追问'ta想要我什么'，开始问'我想要什么'。即使答案是空白，那也是你的空白。"
+      name_cn: "玫瑰",
+      name_en: "Rosa",
+      essence: "你是欲望的化身，爱与痛的辩证。",
+      character: "你炽热、矛盾、不可忽视。你的美丽带着危险——刺是你的防御，也是你的诱惑。你渴望被爱到极致，但又害怕平庸的温柔。你的情感浓烈到近乎暴力，你爱得痛苦，也痛得美丽。你是花中的女王，骄傲、戏剧化、永远站在聚光灯下。",
+      shadow: "你的激情有时会伤人伤己。你可能沉溺于痛苦，因为它证明了你'活着'。你需要学会：不是所有的爱都需要流血,不是所有的美都需要代价。",
+      culture: "在西方，玫瑰象征浪漫之爱（尤其红玫瑰）；在波斯诗歌中，它是夜莺永恒的恋人；在中世纪，它既是圣母的纯洁，也是情欲的隐喻。你承载着这所有的矛盾。",
+      suited_for: "艺术家、演员、诗人、所有敢于燃烧自己的人。",
+      quote: "'我宁愿在盛放中死去，也不要在枯萎中苟活。'"
     }
   },
 
-  "强迫症主体：永恒的延宕者": {
-    keywords: ['obsessional', 'impossible_jouissance', 'doubt_mechanism', 'intellectual_superego', 'scripted_desire', 'preemptive_censorship'],
+  "莲花 Lotus": {
+    keywords: ['lotus', 'transcendent', 'zen', 'grounded', 'enlightened', 'holistic'],
+    minScore: 25,
+    description: {
+      name_cn: "莲花",
+      name_en: "Lotus",
+      essence: "你是从泥土中升起的觉醒。",
+      character: "你扎根于污泥，却开出纯净的花。你经历过黑暗，但没有被玷污。你的智慧不是书本上的，而是从苦难中提炼的。你平静、超然，但不是冷漠——你的慈悲建立在对人性深刻的理解上。你不逃避世界,而是在世界中保持出离。",
+      shadow: "你的超然有时会变成疏离。你可能用'看破'来逃避真正的投入。记住：觉醒不是离开人间，而是在人间清醒地活着。",
+      culture: "在佛教中，莲花是觉悟的象征——'出淤泥而不染'；在印度教中，它是创造之花；在埃及神话中,它代表重生与太阳。你是东方智慧的化身。",
+      suited_for: "修行者、哲学家、心理治疗师、所有在苦难中寻找意义的人。",
+      quote: "'我的根在泥中,我的心在云端。'"
+    }
+  },
+
+  "鸢尾 Iris": {
+    keywords: ['iris', 'melancholic', 'introspective', 'solitary', 'artistic', 'mysterious'],
+    minScore: 25,
+    description: {
+      name_cn: "鸢尾",
+      name_en: "Iris",
+      essence: "你是忧郁的贵族，孤独的美学家。",
+      character: "你活在自己的精神宫殿里。你的美丽不是张扬的，而是需要凝视才能发现的——像梵高笔下的紫色鸢尾，带着神经质的优雅。你敏感、内省、常常沉浸在某种形而上的忧伤中。你不合群，但你也不在意——孤独对你来说是创作的必需。",
+      shadow: "你可能过度浪漫化自己的痛苦，把忧郁当作身份。但要小心：长期的孤绝会让你与世界失联。你的敏感是天赋，不是囚笼。",
+      culture: "在希腊神话中，Iris是彩虹女神，连接天地；在日本，鸢尾（菖蒲）象征武士的勇气；在梵高的画中，它是疯狂与美的结合。你是艺术与哀愁的化身。",
+      suited_for: "作家、画家、音乐家、所有需要孤独来创造的人。",
+      quote: "'我的根在深渊,我的花在云间。'"
+    }
+  },
+
+  "向日葵 Sunflower": {
+    keywords: ['sunflower', 'optimistic', 'vital', 'warm', 'extroverted', 'bold'],
+    minScore: 26,
+    description: {
+      name_cn: "向日葵",
+      name_en: "Sunflower",
+      essence: "你是不灭的希望,是生命力的狂欢。",
+      character: "你永远向着光。你热情、坦荡、毫不掩饰你的渴望和快乐。你的存在本身就是一种治愈——你让人想起夏天、麦田、无忧无虑的童年。你不复杂,但这不是浅薄，而是一种罕见的纯粹。你相信明天会更好,这种信念支撑着你和你身边的人。",
+      shadow: "你可能在用'积极'来逃避阴影。不是所有的黑暗都需要被照亮——有时候，坐在黑暗里也是一种勇敢。允许自己悲伤，不会让你的光芒减少。",
+      culture: "向日葵原产美洲，在梵高笔下成为'金色的疯狂'；在中国，它象征忠诚和仰慕；在苏联时期，它是丰收的标志。你是阳光的信徒。",
+      suited_for: "教师、社工、所有需要带给他人希望的职业。",
+      quote: "'只要太阳还在,我就不会低头。'"
+    }
+  },
+
+  "梅花 Plum Blossom": {
+    keywords: ['plum_blossom', 'stoic', 'resilient', 'austere', 'noble', 'solitary'],
+    minScore: 28,
+    description: {
+      name_cn: "梅花",
+      name_en: "Plum Blossom",
+      essence: "你是风骨的象征,在严寒中傲然独立。",
+      character: "你在所有花都凋零时绽放。你不需要温暖的环境、肥沃的土壤、或他人的陪伴——你在逆境中反而更加璀璨。你克制、高洁、有一种清冷的美。你的坚韧不是苦大仇深，而是一种从容的淡定。你是精神上的贵族,不屑与世俗为伍。",
+      shadow: "你的清高有时会变成冷漠。你可能用'不需要'来掩盖'不敢要'。记住：接受温暖不是软弱，拒绝孤独也不是堕落。",
+      culture: "在中国文化中，梅兰竹菊是'四君子'之首——象征高洁、坚贞；在日本，梅花代表武士道精神。你是东方美学的极致。",
+      suited_for: "学者、禁欲主义者、所有在逆境中修行的人。",
+      quote: "'不经一番寒彻骨,怎得梅花扑鼻香。'"
+    }
+  },
+
+  "茉莉 Jasmine": {
+    keywords: ['jasmine', 'sensual', 'mysterious', 'delicate', 'nocturnal', 'seductive'],
+    minScore: 24,
+    description: {
+      name_cn: "茉莉",
+      name_en: "Jasmine",
+      essence: "你是夜的香气,是感官的诱惑。",
+      character: "你在黑暗中释放你的魅力。你不是视觉的,而是嗅觉的、触觉的——你的存在是一种氛围,而非一个形象。你柔软、神秘、带着某种东方的魅惑。你的美丽需要靠近才能感知,你不会在人群中喧哗。你是诗人的缪斯,是夏夜的耳语。",
+      shadow: "你可能过于依赖'被感知'。你的价值不在于你的香气能走多远,而在于你自己。不要让'诱惑'成为你存在的唯一方式。",
+      culture: "在阿拉伯文化中，茉莉是爱情之花；在印度，它编织成新娘的花环；在中国，茉莉花茶是日常的诗意。你是感官世界的女王。",
+      suited_for: "香水师、舞者、所有懂得'气氛'胜过'言语'的人。",
+      quote: "'我在黑暗中绽放,因为只有夜晚配得上我的香。'"
+    }
+  },
+
+  "菊花 Chrysanthemum": {
+    keywords: ['chrysanthemum', 'nostalgic', 'refined', 'traditional', 'melancholic', 'dignified'],
+    minScore: 24,
+    description: {
+      name_cn: "菊花",
+      name_en: "Chrysanthemum",
+      essence: "你是秋日的沉思,是时间的见证者。",
+      character: "你在夏天的狂欢结束后登场。你不争春,你守秋——你的美丽带着成熟、怀旧和一丝淡淡的哀愁。你优雅、节制,有一种旧时代的风度。你懂得珍惜、告别和放手。你是传统的守护者,但不是僵化的——你的传统是活的,是有温度的。",
+      shadow: "你可能过度沉溺于过去。'曾经'固然美好,但不要让它成为你拒绝'现在'的借口。时间向前,你也可以。",
+      culture: "在中国，菊与梅兰竹并列为'四君子'——象征隐逸与高洁；在日本，菊花是皇室的标志；在西方，它是墓园之花,代表永恒的记忆。你是时间的诗人。",
+      suited_for: "史学家、茶人、园艺师、所有珍视传统的人。",
+      quote: "'待到秋来九月八,我花开后百花杀。'"
+    }
+  },
+
+  "百合 Lily": {
+    keywords: ['lily', 'pure', 'sacred', 'idealistic', 'fragile', 'mystical'],
+    minScore: 23,
+    description: {
+      name_cn: "百合",
+      name_en: "Lily",
+      essence: "你是纯洁的化身,是圣与俗的边界。",
+      character: "你白得刺眼,纯得让人不敢触碰。你有一种宗教性的美——不食人间烟火,超凡脱俗。你理想主义、脆弱、容易受伤,但你坚持你的纯粹,即使代价是孤独。你相信爱、美、善,即使现实一再打脸。你的存在本身就是一种信仰。",
+      shadow: "你的纯洁可能变成洁癖。你可能用'理想'来逃避'真实',用'完美'来拒绝'人性'。记住：泥土不肮脏,它只是泥土。",
+      culture: "在基督教中，百合是圣母的象征；在中国，它代表百年好合；在希腊神话中，它从天后赫拉的乳汁中诞生。你是神圣的使者。",
+      suited_for: "神职人员、理想主义者、所有相信'更高之物'的人。",
+      quote: "'我宁可玉碎,也不瓦全。'"
+    }
+  },
+
+  "罂粟 Poppy": {
+    keywords: ['poppy', 'passionate', 'volatile', 'dramatic', 'transgressive', 'intense'],
     minScore: 22,
     description: {
-      core: "你的人生是一场永不完成的草稿。",
-      identity: "你活在思想的迷宫里。每一个决定都需要经过无数次推演，每一个欲望都被理性解剖到失去血肉。你不是不想要，而是在'想要'和'真正得到'之间设置了无数关卡——当你终于到达终点，你已经不再想要。",
-      structure: "这是强迫症主体的结构：不可能的欲望（le désir impossible）。你通过'延宕'来维系欲望——只要不实现，欲望就不会暴露其虚无。你的超我是一个苛刻的审计师，逼迫你对每一个念头负责。但你的反抗隐秘而固执：'我服从，但我不享受。'",
-      root: "这可能源于与父亲法则的关系——你内化了一个过于强大的象征律，但同时保留了一个'不可触及的内核'。小时候，你可能学会了：“活着就是危险的”（你的存在、欲望、攻击性都可能'杀死'某个重要他者）。于是你把自己变成了一具行尸走肉，用理性包裹生命力。",
-      gift: "但这也让你成为了最可靠的人：你的承诺重于泰山，你的思考深邃细腻，你能看到别人看不到的漏洞和可能。你是工程师、哲学家、编辑——任何需要'精确'的领域。",
-      invitation: "也许可以尝试：允许自己'做得不够好'。试着在没有计划的情况下行动，看看世界会不会崩塌。答案是：不会。"
+      name_cn: "罂粟",
+      name_en: "Poppy",
+      essence: "你是美丽的危险,是禁忌的诱惑。",
+      character: "你艳丽到近乎妖异。你的红不是玫瑰的浪漫,而是血液的颜色——热烈、暴力、不可抗拒。你活在极端：要么盛放,要么死亡,没有中间状态。你的存在挑战道德、挑战规则,你不在乎被定义为'危险',因为危险本身就是你的魅力。",
+      shadow: "你的强度可能毁灭自己。你可能沉迷于'极致体验',以至于无法忍受平凡。但生活不只是高潮——学会在平淡中呼吸,也是一种勇气。",
+      culture: "在西方，红罂粟是战争与纪念的象征（一战）；在东方,它是鸦片的来源,代表堕落与诱惑；在希腊神话中,它是睡眠之神的花。你是矛盾的极致。",
+      suited_for: "革命者、冒险家、所有拒绝平庸的人。",
+      quote: "'我在烈火中盛放,在烈火中毁灭。'"
     }
   },
 
-  "倒错主体：规则的例外": {
-    keywords: ['perverse', 'disavowal', 'transgressive_fantasy', 'sadistic_experiment', 'phallic_object', 'mastery_of_signifier'],
-    minScore: 14,
+  "山茶 Camellia": {
+    keywords: ['camellia', 'dignified', 'stoic', 'aesthetic', 'noble', 'restrained'],
+    minScore: 22,
     description: {
-      core: "你知道规则，但你不受规则约束。",
-      identity: "你活在一种奇特的确定性中——当别人都在怀疑、焦虑、追问时，你已经知道了答案。你的欲望清晰、直接、不需要他者的认证。你不是反抗规则，而是站在规则之外，像一个旁观者。",
-      structure: "这是倒错结构的核心：否认（le déni）。你知道'那个东西'（阉割、缺失、不完整），但你拒绝接受它。你通过某种'例外'来维持全能感——也许是某个仪式、某个物品、某种权力关系。你是导演，而非演员。",
-      root: "这可能与父亲功能的某种扭曲有关——不是缺失，而是不一致。你可能学会了：**规则是可以被操控的**。你成了象征秩序的'破解者'，你懂得如何利用规则的缝隙。",
-      gift: "这赋予了你罕见的自由和创造力。你是艺术家、发明家、革命者——所有需要'打破常规'的领域都欢迎你。你不会被社会焦虑束缚，你敢于实验。",
-      shadow: "但小心：这种确定性可能建立在对他者痛苦的无感上。倒错不是道德问题，而是结构问题——你可能无意识地需要他者的'缺失'来确认自己的'完整'。",
-      invitation: "也许可以问问自己：当我在'确定'时，我在逃避什么不确定？"
+      name_cn: "山茶花",
+      name_en: "Camellia",
+      essence: "你是无声的骄傲,是克制的华丽。",
+      character: "你在冬天开花,不为春天的热闹。你美丽但不张扬,华贵但不媚俗。你有一种武士般的风骨——你知道你的价值,所以不需要证明。你的凋谢也是整朵坠落,不拖泥带水,不留残败的余地。你是完美主义者,但你的完美是内在的,不是表演的。",
+      shadow: "你的高贵可能变成冷漠。你可能用'体面'来逃避真实的情感。记住：落泪不是失态,崩溃也可以很美。",
+      culture: "在日本，山茶花是武士道的象征——整朵坠落如武士的切腹；在中国,它是'花中珍品'；在西方,它象征高贵的爱。你是东方美学与西方浪漫的结合。",
+      suited_for: "建筑师、茶道师、所有追求'克制之美'的人。",
+      quote: "'我以最完美的姿态离开,不给世界留下我衰败的样子。'"
     }
   },
 
-  "边缘位置：象征的裂痕": {
-    keywords: ['psychotic_edge', 'foreclosure_risk', 'failed_identification', 'real_intrusion', 'fragmented_superego', 'self_other_blur'],
+  "薰衣草 Lavender": {
+    keywords: ['lavender', 'delicate', 'ephemeral', 'sensory', 'melancholic', 'mysterious'],
+    minScore: 18,
+    description: {
+      name_cn: "薰衣草",
+      name_en: "Lavender",
+      essence: "你是记忆的香气,是温柔的忧伤。",
+      character: "你是田野上的紫色雾霭,是童年夏天的气味。你柔软、怀旧、带着某种说不清的惆怅。你不激烈,但你持久——你的香气会留在枕头上、衣橱里,成为某个人记忆的锚点。你治愈他人,但你自己也需要被治愈。你是温柔的,但不是软弱的。",
+      shadow: "你可能太容易被'利用'。你的温柔不应该成为他人的消耗品。学会说不,不会让你失去你的美。",
+      culture: "在法国普罗旺斯,薰衣草是浪漫与宁静的象征；在芳疗中,它代表放松与疗愈；在维多利亚花语中,它意味着'等待'。你是时间的温柔守望者。",
+      suited_for: "治疗师、护士、所有以温柔为武器的人。",
+      quote: "'我的香气是一首摇篮曲,唱给所有疲惫的灵魂。'"
+    }
+  },
+
+  "雏菊 Daisy": {
+    keywords: ['daisy', 'natural', 'fresh', 'wholesome', 'connected', 'optimistic'],
+    minScore: 16,
+    description: {
+      name_cn: "雏菊",
+      name_en: "Daisy",
+      essence: "你是简单的快乐,是日常的奇迹。",
+      character: "你不戏剧化,不复杂,不沉重——你就是你。你在路边、田野、任何有阳光的地方生长。你不需要特殊的土壤或照料,你适应力强、乐观、充满生命力。你的美丽不是惊艳的,而是舒服的——像清晨的露水,像孩子的笑声。你让人想起生活本来的样子。",
+      shadow: "你可能被低估,甚至被忽视。但记住：平凡不等于平庸。你的简单是一种选择,不是能力的限制。",
+      culture: "在西方，雏菊象征天真与纯洁；在北欧神话中,它是爱神Freya的圣花；在花语中,它代表'纯洁的爱'。你是日常生活的诗意。",
+      suited_for: "园丁、幼教老师、所有珍视'小确幸'的人。",
+      quote: "'我不需要宫殿,田野就是我的王国。'"
+    }
+  },
+
+  "紫藤 Wisteria": {
+    keywords: ['wisteria', 'clinging', 'dependent', 'romantic', 'nostalgic'],
     minScore: 12,
     description: {
-      core: "你站在意义的边缘，窥见了它的虚构性。",
-      identity: "你常常感到'世界的不真实'——不是抑郁的灰暗，而是一种超现实的陌生感。镜子里的脸、自己的声音、甚至'我'这个词，都像是随时会瓦解的幻象。你比大多数人更接近'实在界'（the Real）——那个没有意义的、原始的维度。",
-      structure: "这不是精神病，而是接近精神病结构的边缘位置。你可能经历过某种'父亲隐喻的失败'——不是弑父，而是父亲从未真正建立。象征秩序对你来说像一件不合身的衣服，你勉强穿着它，但总感到异物感。",
-      root: "这可能源于早期某种根本性的'不被命名'——你的存在没有被象征秩序充分接纳。你是'多余的''不被期待的'，或者你的性别、身份与象征赋予你的位置存在错位。",
-      gift: "但这也让你成为了先知、艺术家、神秘主义者。你能看到别人看不到的真相——因为你不完全相信共识现实。你的作品、思想往往超前于时代，因为你不受象征的限制。",
-      warning: "这是一个脆弱的位置。在压力、创伤或失去结构（失业、失恋、亲人去世）时，你可能会体验到更严重的解体。请照顾好自己，必要时寻求专业支持。",
-      invitation: "你不需要'修复'自己。也许可以找到一些锚点——音乐、写作、某个人——帮助你在象征和实在之间保持平衡。"
-    }
-  },
-
-  "神经症的平衡：在两极之间": {
-    keywords: ['hysteric', 'obsessional', 'desire_of_lack', 'doubt_mechanism'],
-    minScore: 10,
-    requireBoth: ['hysteric', 'obsessional'],
-    balanceThreshold: 0.6,
-    description: {
-      core: "你在提问和控制之间摇摆。",
-      identity: "你同时具有癔症和强迫症的特质——有时你是渴望被欲望的谜，有时你是精密计算的机器。这种摆荡本身就是防御：当提问变得太危险，你就躲进思考；当思考让你窒息，你就跃入情感。",
-      structure: "这是大多数'正常'神经症的样子——不是纯粹的一种，而是动态的组合。你可能在不同关系、不同情境中展现不同面向。",
-      gift: "这种灵活性是优势。你既能共情又能分析，既有激情又有理性。你不会被单一结构困住。",
-      invitation: "观察自己的摆荡模式。在什么时候，你更像'提问者'？在什么时候，你变成'控制者'？这个模式本身就是你的答案。"
-    }
-  },
-
-  "自恋的镜像：完整的幻觉": {
-    keywords: ['narcissistic_libido', 'phallic_jouissance', 'imaginary_wholeness', 'narcissistic_acceptance', 'autonomous_will'],
-    minScore: 15,
-    description: {
-      core: "你活在镜像的安全感中，但那是虚构的完整。",
-      identity: "你对自己有一种基本的确信——你知道你是谁，你接受镜中的形象，你的欲望清晰可辨。这在表面上看起来很健康，但可能掩盖了一个更深的问题：你太过认同于自己的镜像，以至于失去了真正的主体性。",
-      structure: "这是自恋型结构：你没有完全进入象征界的辩证法（我与他者的相互构成），而是停留在想象界的'完美镜像'中。你不需要他者的欲望来确认自己——这既是强大，也是孤独。",
-      root: "这可能源于早期的'镜像阶段'过于成功——你被充分地镜映、理想化，以至于形成了一个'坚不可摧的自我'。但代价是：你可能难以真正与他人建立联结，因为他者永远是镜子或观众，而非真正的主体。",
-      shadow: "小心：当镜像破裂时（衰老、失败、被拒绝），你可能会体验到毁灭性的崩溃。因为你的整个自我建立在'完整'的幻觉上。",
-      invitation: "也许可以尝试：让自己'不完美'地被看见。选择一个安全的人，展示你的裂缝。"
-    }
-  },
-
-  "抑制的主体：欲望的冻结": {
-    keywords: ['inhibition', 'repression', 'denial_of_need', 'ascetic_defense', 'anhedonia', 'affective_flatness'],
-    minScore: 12,
-    description: {
-      core: "你把欲望深深埋葬，以至于忘记了它的存在。",
-      identity: "你的生活井然有序，但缺少色彩。你不是痛苦（那至少是一种生命力），而是平淡、麻木、'还可以'。你的欲望不是被压抑，而是被冻结——甚至连压抑都需要力量，而你已经没有了。",
-      structure: "这可能是早期的过度适应——你学会了：**欲望是危险的**。也许你的需求曾被严厉惩罚，或者你的家庭不允许'想要'。于是你把自己变成了一个'不需要'的人。",
-      gift: "这让你成为了最不麻烦的人——你独立、自律、从不索取。但这不是真正的力量，而是一种放弃。",
-      warning: "长期的抑制可能导致抑郁、心身症状或突然的爆发。你的欲望没有消失，只是在等待。",
-      invitation: "从最小的'想要'开始。今天你想吃什么？穿什么颜色？即使是这些，也是重新学习欲望的开始。"
-    }
-  },
-
-  "未分化的主体：在成为之前": {
-    keywords: [],
-    minScore: 0,
-    fallback: true,
-    description: {
-      core: "你的结构尚未定型，或者你拒绝被定型。",
-      identity: "这个测试没有捕捉到你的核心模式——可能因为你正处在转变期，可能因为你的防御太成功，也可能因为你真的是一个'未完成'的主体。",
-      invitation: "这不是失败，而是一种开放性。继续观察自己在不同情境中的反应。主体结构不是命运，而是一种倾向——它可以被理解，也可以被改写。"
+      name_cn: "紫藤",
+      name_en: "Wisteria",
+      essence: "你是依附的浪漫,是缠绕的温柔。",
+      character: "你需要支撑才能攀升,但一旦找到依靠,你会开出瀑布般的繁花。你的美丽是关系性的——你在'我们'中才完整。你怀旧、浪漫,常常沉浸在某种'曾经的美好'中。你不是独立的个体,而是关系的一部分,这既是你的脆弱,也是你的力量。",
+      shadow: "你可能过度依赖,以至于失去自我。如果支撑倒下,你会怎样?学会偶尔站立,即使摇摇晃晃。",
+      culture: "在日本，紫藤象征欢迎与款待；在中国古典园林中,它代表缠绵的爱情。你是关系的诗人。",
+      suited_for: "所有相信'爱是两个人的事'的人。",
+      quote: "'我需要你,这不是软弱,而是我爱的方式。'"
     }
   }
 };
 
 // 生成分析报告（核心算法）
 function generateAnalysis(scores) {
-    // 1. 计算每个原型的匹配度
-    let archetypeMatches = [];
+    // 1. 计算每个花的匹配度
+    let flowerMatches = [];
     
-    for (let archetype in resultArchetypes) {
-        const profile = resultArchetypes[archetype];
-        
-        // 跳过fallback类型（最后处理）
-        if (profile.fallback) continue;
-        
+    for (let flower in flowerArchetypes) {
+        const profile = flowerArchetypes[flower];
         let matchScore = 0;
         let keywordCount = 0;
         
-        // 计算该原型关键词的总分
+        // 计算该花关键词的总分
         profile.keywords.forEach(keyword => {
             if (scores[keyword]) {
                 matchScore += scores[keyword];
@@ -128,45 +214,10 @@ function generateAnalysis(scores) {
             }
         });
         
-        // 检查是否达到最低分数阈值
+        // 只有达到最低分数阈值才考虑
         if (matchScore >= profile.minScore) {
-            // 特殊检查：如果需要同时具备多个维度
-            if (profile.requireBoth) {
-                let hasAllRequired = profile.requireBoth.every(req => {
-                    let reqScore = 0;
-                    profile.keywords.forEach(kw => {
-                        if (kw.includes(req) && scores[kw]) {
-                            reqScore += scores[kw];
-                        }
-                    });
-                    return reqScore > 0;
-                });
-                
-                if (!hasAllRequired) continue;
-                
-                // 检查平衡度
-                if (profile.balanceThreshold) {
-                    let scores_by_type = {};
-                    profile.requireBoth.forEach(type => {
-                        scores_by_type[type] = 0;
-                        profile.keywords.forEach(kw => {
-                            if (kw.includes(type) && scores[kw]) {
-                                scores_by_type[type] += scores[kw];
-                            }
-                        });
-                    });
-                    
-                    let values = Object.values(scores_by_type);
-                    let min = Math.min(...values);
-                    let max = Math.max(...values);
-                    let balance = min / max;
-                    
-                    if (balance < profile.balanceThreshold) continue;
-                }
-            }
-            
-            archetypeMatches.push({
-                name: archetype,
+            flowerMatches.push({
+                name: flower,
                 score: matchScore,
                 avgScore: keywordCount > 0 ? matchScore / keywordCount : 0,
                 profile: profile
@@ -175,65 +226,68 @@ function generateAnalysis(scores) {
     }
     
     // 2. 按匹配分数排序
-    archetypeMatches.sort((a, b) => b.score - a.score);
+    flowerMatches.sort((a, b) => b.score - a.score);
     
-    // 3. 确定主要原型
-    let primaryArchetype = archetypeMatches[0];
+    // 3. 确定主要花朵
+    let primaryFlower = flowerMatches[0];
+    let secondaryFlower = flowerMatches.length > 1 ? flowerMatches[1] : null;
     
-    // 4. 如果没有匹配，使用fallback
-    if (!primaryArchetype) {
-        primaryArchetype = {
-            name: "未分化的主体：在成为之前",
-            profile: resultArchetypes["未分化的主体：在成为之前"]
+    // 4. 如果没有匹配的花（极少情况），给一个通用结果
+    if (!primaryFlower) {
+        return {
+            title: "野花 Wildflower",
+            content: `
+                <p class="opening">你是不被命名的野花,自由生长。</p>
+                
+                <h3>你的气质</h3>
+                <p>你可能是那种'无法归类'的人——不属于任何一个明确的类型,或者你正处在转变期。这不是问题,而是一种开放性。你还在成为,还在探索,还在定义自己的颜色和香气。</p>
+                
+                <h3>给你的话</h3>
+                <p>不是每朵花都需要有名字。继续生长,继续绽放,你终会找到属于自己的季节。</p>
+                
+                <p class="closing">"做一朵野花又何妨？我自由,我在风中。"</p>
+            `
         };
     }
     
     // 5. 生成详细报告
-    let title = primaryArchetype.name;
+    let title = primaryFlower.profile.description.name_cn + " " + primaryFlower.profile.description.name_en;
     let content = '';
-    let desc = primaryArchetype.profile.description;
+    let desc = primaryFlower.profile.description;
     
-    // 开场核心
-    content += `<p class="opening">${desc.core}</p>`;
+    // 开场
+    content += `<p class="opening">${desc.essence}</p>`;
     
-    // 主要内容
-    if (desc.identity) {
-        content += `<h3>你的主体位置</h3>`;
-        content += `<p>${desc.identity}</p>`;
+    // 核心气质
+    content += `<h3>你的气质</h3>`;
+    content += `<p>${desc.character}</p>`;
+    
+    // 如果有显著的次要花朵（分数接近），加入混合描述
+    if (secondaryFlower && secondaryFlower.score > primaryFlower.score * 0.75) {
+        content += `<h3>你的另一面</h3>`;
+        content += `<p>你同时带有<strong>${secondaryFlower.profile.description.name_cn}</strong>的特质：${secondaryFlower.profile.description.essence}</p>`;
+        content += `<p class="secondary-trait">${secondaryFlower.profile.description.character.substring(0, 150)}...</p>`;
     }
     
-    if (desc.structure) {
-        content += `<h3>结构的秘密</h3>`;
-        content += `<p>${desc.structure}</p>`;
-    }
-    
-    if (desc.root) {
-        content += `<h3>可能的起源</h3>`;
-        content += `<p>${desc.root}</p>`;
-    }
-    
-    if (desc.gift) {
-        content += `<h3>你的天赋</h3>`;
-        content += `<p>${desc.gift}</p>`;
-    }
-    
+    // 阴影面
     if (desc.shadow) {
-        content += `<h3>阴影面</h3>`;
+        content += `<h3>需要留意的</h3>`;
         content += `<p>${desc.shadow}</p>`;
     }
     
-    if (desc.warning) {
-        content += `<h3>需要留意的</h3>`;
-        content += `<p>${desc.warning}</p>`;
-    }
+    // 文化意涵
+    content += `<h3>你在文化中的位置</h3>`;
+    content += `<p>${desc.culture}</p>`;
     
-    if (desc.invitation) {
-        content += `<h3>给你的邀请</h3>`;
-        content += `<p>${desc.invitation}</p>`;
-    }
+    // 适合的道路
+    content += `<h3>你适合的道路</h3>`;
+    content += `<p>${desc.suited_for}</p>`;
+    
+    // 引语
+    content += `<p class="flower-quote">${desc.quote}</p>`;
     
     // 结尾
-    content += `<p class="closing">这是拉康/弗洛伊德视角下的一种解读。<br>主体结构不是宿命，而是理解自己的起点。<br><br>"无意识是他者的话语。"<br>——雅克·拉康</p>`;
+    content += `<p class="closing">每一朵花都有它的季节。<br>你不需要成为玫瑰园里的玫瑰,<br>你只需要成为你自己。</p>`;
     
     return { title, content };
 }
